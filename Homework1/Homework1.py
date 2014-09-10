@@ -59,4 +59,15 @@ def run(text, index):
             resultArray.append(s)
         print resultArray
 
-		
+
+def homeworkProblem():
+    original = "attack at dawn"
+    new = "attack at dusk"
+    cthex = "09e1c5f70a65ac519458e7e53f36"
+    print len(cthex)
+    ct = cthex.decode('hex')
+    key = strxor(original, ct)
+    print key
+    newct = strxor(key, new)
+    print newct.encode('hex')
+    
