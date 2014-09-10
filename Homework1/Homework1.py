@@ -9,23 +9,22 @@ def strxor(a, b):     # xor two strings of different lengths
     
 def main():
     print 'newone';
-    resulttext = []
-    for character in ciphertexts[0]:
-        resulttext.append(character)
-    uberlen = len(ciphertexts[0]);
-    for x in range(1,10):
-        print x
-        result = strxor(ciphertexts[0].decode('hex'), ciphertexts[x].decode('hex'))
-        for index in range(0, len(result)):
-            if ischar(result[index]) and index < uberlen and not resulttext[index] == result[index]:
-                if ischar(resulttext[index]):
-                    resulttext[index] = " ";
-                else:    
-                    resulttext[index] = result[index]
-    print resulttext;
-    print "test"
-    print strxor(' ', 'a')
-    print strxor(' ', 'A')
+    for textindex in range(0,len(ciphertexts)):
+        print textindex
+        resulttext = []
+        for character in ciphertexts[textindex].decode('hex'):
+            resulttext.append(' ')
+        uberlen = len(ciphertexts[0]);
+        for x in range(0,10):
+            result = strxor(ciphertexts[textindex].decode('hex'), ciphertexts[x].decode('hex'))
+            for index in range(0, len(result)):
+                if ischar(result[index]) and index < uberlen:
+                    if ischar(resulttext[index]) and not result[index] == resulttext[index]:
+                        resulttext[index] = " "
+                    else:
+                        resulttext[index] = result[index]
+        print resulttext;
+        
     
 
 def ischar(char):
