@@ -63,7 +63,7 @@ def run(text, index):
 def homeworkProblem():
     original = "attack at dawn"
     new = "attack at dusk"
-    cthex = "09e1c5f70a65ac519458e7e53f36"
+    cthex = "6c73d5240a948c86981bc294814d"
     print len(cthex)
     ct = cthex.decode('hex')
     key = strxor(original, ct)
